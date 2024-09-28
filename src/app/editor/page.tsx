@@ -1,21 +1,23 @@
 import Article from 'layout/Article'
 import Link from 'next/link'
 
+import { BtnPrimary } from 'components/Button'
+
 export default function Page() {
   return (
     <Article>
+      <h1>You are in Editor mode</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum. Nulla facilisi. Maecenas nec nunc eget nunc
-        tincidunt tincidunt. Proin euismod, nunc eget aliquam ultricies, nunc
-        nisl tincidunt nunc, nec tincidunt nunc nunc eget nunc.
+        Editor mode is a cms for this website.
+        <br />
+        You can change this website's UI in the left panel.
+        <br />
+        Remember to save the setting or everything are just temporary changed,
+        will automatically reset when you refresh the page.
       </p>
-      <Link href='/'>Back to home</Link>
+      <BtnPrimary>
+        <Link href='/'>Back to home</Link>
+      </BtnPrimary>
     </Article>
   )
 }

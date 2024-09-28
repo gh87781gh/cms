@@ -12,5 +12,5 @@ export default function Logo() {
   const theme = layoutSetting?.theme
   const primaryColor = layoutSetting?.primaryColor
 
-  return <IconLogo className={cx('logo', theme)} primaryColor={primaryColor} />
+  return <IconLogo className={cx('logo', theme)} color={primaryColor} />
 }

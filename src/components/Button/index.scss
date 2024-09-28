@@ -1,0 +1,5 @@
+.btn-group {
+  & > button:not(:last-child) {
+    margin-right: $gap-base;
+  }
+}

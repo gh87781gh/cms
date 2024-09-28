@@ -3,6 +3,10 @@ export type LayoutSettingType = {
   theme: 'dark' | 'light'
   isShowThemeSwitch: boolean
   primaryColor: string
+  btnTextColor: string
+  borderRadius: number
+  borderRadiusSM: number
+  borderRadiusLG: number
 }
 
 export enum LayoutModule {

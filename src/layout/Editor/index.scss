@@ -8,5 +8,23 @@
   border-right: 1px solid $color-gray-3;
   z-index: 1000;
   padding: 20px;
-  color: $color-blue-6;
+  color: #4096ff;
+  position: relative;
+}
+.editor-content {
+  height: 100%;
+}
+.editor-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  .ant-btn {
+    width: 150px;
+  }
 }

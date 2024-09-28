@@ -1,14 +1,15 @@
 'use client'
 
-import { useState } from 'react'
 import 'react-perfect-scrollbar/dist/css/styles.css'
-import PerfectScrollbar from 'react-perfect-scrollbar'
 import './index.scss'
+import { useState } from 'react'
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import { useSearchParams } from 'next/navigation'
+import { match } from 'ts-pattern'
+
 import Header from 'layout/Header'
 import Sidebar from 'layout/Sidebar'
-import { match } from 'ts-pattern'
 import { ConfigProvider } from 'antd'
-import { usePathname } from 'next/navigation'
 import { MyContext } from 'storage'
 import { LayoutSettingType, LayoutModule } from './types'
 import cx from 'utils/cx'
@@ -21,28 +22,34 @@ export default function LayoutTemplate({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const pathname = usePathname()
-  const { ...params } = config
+  const searchParams = useSearchParams()
+  const isAdmin = searchParams.get('admin') === 'true'
+
+  const { ...settings } = config
   const [layoutSetting, setLayoutSetting] = useState<LayoutSettingType>({
-    ...params
+    ...settings
   })
 
   return (
     <MyContext.Provider value={{ layoutSetting, setLayoutSetting }}>
       <ConfigProvider
         theme={{
-          /* here is antd style tokens */
           token: {
             colorPrimary: layoutSetting.primaryColor,
-            colorPrimaryBg: layoutSetting.primaryColor
+            colorPrimaryBg: layoutSetting.primaryColor,
+            borderRadius: layoutSetting.borderRadius,
+            borderRadiusSM: layoutSetting.borderRadiusSM,
+            borderRadiusLG: layoutSetting.borderRadiusLG
+          },
+          components: {
+            Button: {
+              primaryColor: layoutSetting.btnTextColor
+            }
           }
-          // components: {
-          //   Switch: {}
-          // }
         }}
       >
-        {pathname === '/editor' && <Editor />}
-        <main className={cx(pathname === '/editor' ? 'main-editor' : 'main')}>
+        {isAdmin && <Editor />}
+        <main className={cx(isAdmin ? 'main-editor' : 'main')}>
           {match(layoutSetting.layout)
             .with(LayoutModule.a, () => (
               <>
