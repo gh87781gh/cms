@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import './index.scss'
 import { generate } from '@ant-design/colors'
 import PerfectScrollbar from 'react-perfect-scrollbar'
-
+import { useRouter } from 'next/navigation'
 import { MyContext } from 'storage'
 import {
   FormGroup,
@@ -19,6 +19,7 @@ import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
 import config from 'config'
 
 export default function Editor() {
+  const router = useRouter()
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
@@ -123,6 +124,9 @@ export default function Editor() {
       </div>
       <div className='editor-footer'>
         <BtnGroup>
+          <BtnOutline size='large' onClick={() => router.push('/')}>
+            Exit
+          </BtnOutline>
           <BtnOutline size='large' onClick={resetConfig}>
             Reset
           </BtnOutline>

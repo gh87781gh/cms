@@ -12,7 +12,7 @@ $article-color-light: $color-text-light;
     background-color: $article-bg-light;
     color: $article-color-light;
   }
-  height: calc(100vh - $layout-header-height);
+  height: 100%;
 }
 .article-container {
   padding: $gap-base;
