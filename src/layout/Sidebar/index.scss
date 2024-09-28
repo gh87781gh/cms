@@ -1,13 +1,13 @@
 $sidebar-bg-dark: $color-gray-6;
 $sidebar-bg-light: $color-gray-1;
-$sidebar-color-dark: $color-gray-2;
-$sidebar-color-light: $color-gray-2;
+$sidebar-color-dark: $color-text-dark;
+$sidebar-color-light: $color-text-light;
 $sidebar-menu-bg-dark: $color-gray-5;
 $sidebar-menu-bg-light: $color-gray-2;
 $sidebar-menu-bg-dark-hover: $color-gray-4;
 $sidebar-menu-bg-light-hover: $color-gray-3;
-$sidebar-menu-color-dark: $color-gray-2;
-$sidebar-menu-color-light: $color-gray-8;
+$sidebar-menu-color-dark: $color-text-dark;
+$sidebar-menu-color-light: $color-text-light;
 $sidebar-shadow-dark: 0 10px 10px 0 $color-gray-10;
 $sidebar-shadow-light: 0 10px 10px 0 $color-gray-4;
 
@@ -66,6 +66,12 @@ $sidebar-padding-x: $gap-base;
   width: 100%;
   padding: $gap-xxl;
   text-align: center;
+  &.dark {
+    color: $sidebar-color-dark;
+  }
+  &.light {
+    color: $sidebar-color-light;
+  }
 }
 
 .sidebar-a {

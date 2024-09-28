@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: nowrap;
 
-  .article {
+  .container-a-main {
     width: calc(100vw - $layout-sidebar-width);
     height: calc(100vh - $layout-header-height);
   }
@@ -17,7 +17,7 @@
   display: flex;
   flex-wrap: nowrap;
 
-  .article {
+  .container-b-main {
     width: 100%;
     height: calc(100vh - $layout-header-height);
   }

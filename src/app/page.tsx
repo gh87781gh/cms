@@ -1,6 +1,8 @@
+import Article from 'layout/Article'
+
 export default function Home() {
   return (
-    <div>
+    <Article>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -314,6 +316,6 @@ export default function Home() {
       eget aliquam ultricies, nunc nisl tincidunt nunc, nec tincidunt nunc nunc
       eget nunc. Nulla facilisi. Maecenas nec nunc eget nunc tincidunt
       tincidunt.
-    </div>
+    </Article>
   )
 }

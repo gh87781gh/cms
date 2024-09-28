@@ -1,0 +1,15 @@
+$article-bg-dark: $color-gray-7;
+$article-bg-light: $color-gray-1;
+$article-color-dark: $color-text-dark;
+$article-color-light: $color-text-light;
+
+.article {
+  &.dark {
+    background-color: $article-bg-dark;
+    color: $article-color-dark;
+  }
+  &.light {
+    background-color: $article-bg-light;
+    color: $article-color-light;
+  }
+}

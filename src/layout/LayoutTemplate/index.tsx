@@ -45,9 +45,9 @@ export default function LayoutTemplate({
                 <Header />
                 <div className='container-a'>
                   <Sidebar />
-                  <article className='article'>
+                  <div className='container-a-main'>
                     <PerfectScrollbar>{children}</PerfectScrollbar>
-                  </article>
+                  </div>
                 </div>
               </>
             ))
@@ -56,9 +56,9 @@ export default function LayoutTemplate({
                 <Sidebar />
                 <div className='container-b-content'>
                   <Header />
-                  <article className='article'>
+                  <div className='container-b-main'>
                     <PerfectScrollbar>{children}</PerfectScrollbar>
-                  </article>
+                  </div>
                 </div>
               </div>
             ))

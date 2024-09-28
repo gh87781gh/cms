@@ -13,7 +13,9 @@ export default function Sidebar(props: Props) {
   return (
     <aside className={cx('sidebar sidebar-a', props.theme)}>
       {props.renderMenu()}
-      <div className='sidebar-footer'>{props.renderSwitchTheme()}</div>
+      <div className={cx('sidebar-footer', props.theme)}>
+        {props.renderSwitchTheme()}
+      </div>
     </aside>
   )
 }
