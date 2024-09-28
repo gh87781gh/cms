@@ -1,0 +1,116 @@
+/* 
+🔴🔴🔴
+Warning!!!!
+This project is global level for many project, so please do NOT change any value here!!!!!
+🔴🔴🔴
+*/
+
+/* 
+use this prompt to generate colors by ai:
+
+use this website palette tool to generate colors for #faad14: https://ant.design/docs/spec/colors#palette-generation-tool
+
+*/
+// NOTE color palettes
+$color-blue-1: #e6f4ff;
+$color-blue-2: #bae0ff;
+$color-blue-3: #91caff;
+$color-blue-4: #69b1ff;
+$color-blue-5: #4096ff;
+$color-blue-6: #1677ff; // primary
+$color-blue-7: #0958d9;
+$color-blue-8: #003eb3;
+$color-blue-9: #002c8c;
+$color-blue-10: #002766;
+
+$color-red-1: #fff1f0;
+$color-red-2: #ffccc7;
+$color-red-3: #ffa39e;
+$color-red-4: #ff7875;
+$color-red-5: #ff4d4f;
+$color-red-6: #f5222d; // error
+$color-red-7: #cf1322;
+$color-red-8: #a8071a;
+$color-red-9: #820014;
+$color-red-10: #5c0011;
+
+$color-yellow-1: #fffbe6;
+$color-yellow-2: #fff1b8;
+$color-yellow-3: #ffe58f;
+$color-yellow-4: #ffd666;
+$color-yellow-5: #ffc53d;
+$color-yellow-6: #faad14; // warning
+$color-yellow-7: #d48806;
+$color-yellow-8: #ad6800;
+$color-yellow-9: #874d00;
+$color-yellow-10: #613400;
+
+$color-green-1: #f6ffed;
+$color-green-2: #d9f7be;
+$color-green-3: #b7eb8f;
+$color-green-4: #95de64;
+$color-green-5: #73d13d;
+$color-green-6: #52c41a; // success
+$color-green-7: #33a02c;
+$color-green-8: #237841;
+$color-green-9: #194d26;
+$color-green-10: #092b00;
+
+$color-gray-1: #fafafa;
+$color-gray-2: #f0f0f0;
+$color-gray-3: #d9d9d9;
+$color-gray-4: #bfbfbf;
+$color-gray-5: #8c8c8c;
+$color-gray-6: #595959;
+$color-gray-7: #434343;
+$color-gray-8: #262626;
+$color-gray-9: #1f1f1f;
+$color-gray-10: #141414;
+
+// system color
+$color-primary: $color-blue-6;
+$color-success: $color-green-6;
+$color-warning: $color-yellow-6;
+$color-error: $color-red-6;
+
+$color-white: $color-gray-1;
+$color-black: $color-gray-8;
+
+// NOTE border radius
+$border-radius-base: 6px;
+$border-radius-sm: 4px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+$border-radius-xxl: 16px;
+
+// NOTE font size
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * 0.8;
+$font-size-lg: $font-size-base * 1.2;
+$font-size-xl: $font-size-base * 1.6;
+$font-size-xxl: $font-size-base * 2;
+
+// NOTE gap
+$gap-base: 1rem;
+$gap-sm: $gap-base * 0.6;
+$gap-lg: $gap-base * 1.2;
+$gap-xl: $gap-base * 1.6;
+$gap-xxl: $gap-base * 2;
+
+// NOTE transition
+$transition-base: 0.3s all;
+
+// NOTE z-index
+$z-index-header: 2;
+$z-index-sidebar: 1;
+
+// NOTE layout
+$layout-header-height: 64px;
+$layout-sidebar-width: 240px;
+
+// NOTE mixins
+@mixin resetList() {
+  padding-left: unset;
+  margin-bottom: unset;
+  list-style-type: none;
+}
