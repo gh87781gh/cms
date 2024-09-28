@@ -1,10 +1,10 @@
 import useSWR from 'swr'
-import { fetcherGET } from 'api/fetcher'
+import { fetcherPOST } from 'api/fetcher'
 
 export const useGames = (queries: string) => {
   const { data, error, isLoading, isValidating, mutate } = useSWR(
     `/game/list${queries}`,
-    fetcherGET
+    fetcherPOST
   )
 
   return {

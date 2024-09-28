@@ -1,0 +1,5 @@
+$section-gap-y: 100px;
+
+.section:not(:last-child) {
+  margin-bottom: $section-gap-y;
+}

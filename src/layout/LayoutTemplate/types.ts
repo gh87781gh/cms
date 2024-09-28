@@ -3,7 +3,12 @@ export enum LayoutModule {
   'b'
 }
 
-export enum GameMode {
+export enum BannerMode {
+  'a',
+  'b',
+  'c'
+}
+export enum GamesMode {
   'a',
   'b'
 }
@@ -11,13 +16,12 @@ export enum GameMode {
 export type GamesViewType = {
   views: 'games'
   title: string
-  mode: GameMode
+  mode: GamesMode
   queries: string
 }
 export type BannerViewType = {
   views: 'banner'
-  title: string
-  mode: GameMode
+  mode: BannerMode
   image: string
 }
 type ViewTypeMap = {

@@ -1,4 +1,4 @@
-import { LayoutModule, LayoutSettingType, GameMode } from 'layout/LayoutTemplate/types'
+import { LayoutModule, LayoutSettingType, GamesMode, BannerMode } from 'layout/LayoutTemplate/types'
 
 const config: LayoutSettingType = {
   layout: LayoutModule.a,
@@ -6,21 +6,26 @@ const config: LayoutSettingType = {
   isShowThemeSwitch: true,
   primaryColor: '#ffa947',
   btnTextColor: '#fff',
-  borderRadius: 6, //Border radius of base components
+  borderRadius: 10, //Border radius of base components
   borderRadiusSM: 4, //SM size border radius, used in small size components, such as Button, Input, Select and other input components in small size
-  borderRadiusLG: 8, //LG size border radius, used in some large border radius components, such as Card, Modal and other components.
+  borderRadiusLG: 16, //LG size border radius, used in some large border radius components, such as Card, Modal and other components.
   homepageViews: [
+    {
+      views: 'banner',
+      mode: BannerMode.a,
+      image: '',
+    },
     {
       views: 'games',
       title: 'Top',
-      mode: GameMode.a,
-      queries: '?gameTags%5B0%5D=top&pcEnable=true&sizePerPage=28&pageNumber=1',
+      mode: GamesMode.a,
+      queries: '',
     },
     {
       views: 'games',
       title: 'Recommend',
-      mode: GameMode.a,
-      queries: '?gameTags%5B0%5D=recommend&pcEnable=true&sizePerPage=28&pageNumber=1'
+      mode: GamesMode.a,
+      queries: ''
     },
   ],
 }

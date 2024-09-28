@@ -1,0 +1,11 @@
+.games {
+  @include resetList();
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.games-empty-card {
+  width: 11%;
+  height: 150px;
+  background-color: $color-gray-6;
+}

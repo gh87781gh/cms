@@ -1,22 +1,36 @@
+import { useContext } from 'react'
 import './index.scss'
 
+import { MyContext } from 'storage'
+
 type PropsType = {
-  title: string
-  data: any
+  data: any[] | null
 }
 
 export default function Games(props: PropsType) {
-  const { title } = props
+  const { layoutSetting } = useContext(MyContext)
+  const borderRadiusLG = layoutSetting?.borderRadiusLG
+
   return (
-    <section className='games'>
-      <h2>{title}</h2>
-      <ul>
-        {props.data.map((item: any) => (
-          <li key={item.id}>
-            <a href=''>{item.title}</a>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul className='games'>
+      {!Array.isArray(props.data)
+        ? Array(8)
+            .fill(null)
+            .map((item: any, index: number) => (
+              <li
+                key={index}
+                className='games-empty-card'
+                style={{ borderRadius: borderRadiusLG }}
+              />
+            ))
+        : props.data?.map((item: any) => (
+            <li key={item.id}>
+              <a href=''>
+                {item.title}
+                {/* TODO: add game image */}
+              </a>
+            </li>
+          ))}
+    </ul>
   )
 }
