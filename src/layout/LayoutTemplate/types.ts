@@ -4,6 +4,6 @@ export type LayoutSettingType = {
 }
 
 export enum LayoutModule {
-  'headerFirst',
-  'sidebarFirst'
+  'a',
+  'b'
 }

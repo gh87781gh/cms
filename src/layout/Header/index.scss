@@ -3,7 +3,7 @@ $header-bg-light: $color-gray-2;
 $header-color-dark: $color-gray-8;
 $header-color-light: $color-gray-2;
 $header-shadow-dark: 0 0 10px 0 $color-gray-10;
-$header-shadow-light: 0 0 10px 0 $color-gray-3;
+$header-shadow-light: 0 0 10px 0 $color-gray-4;
 
 $header-height: $layout-header-height;
 $header-padding-x: $gap-base;
@@ -25,7 +25,6 @@ $header-padding-x: $gap-base;
   justify-content: space-between;
   padding-left: $header-padding-x;
   padding-right: $header-padding-x;
-  z-index: $z-index-header;
 }
 .header-logo {
   &.dark {
@@ -36,4 +35,13 @@ $header-padding-x: $gap-base;
     background-color: $header-bg-light;
     color: $header-color-light;
   }
+}
+
+.header-a {
+  width: 100vw;
+  z-index: $z-index-header;
+}
+.header-b {
+  width: calc(100vw - $layout-sidebar-width);
+  z-index: $z-index-sidebar;
 }

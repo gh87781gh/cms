@@ -1,15 +1,14 @@
+'use client'
+
+import { useContext } from 'react'
 import './index.scss'
 import cx from 'utils/cx'
-import { IconLogo } from 'utils/icons'
 
-type Props = {
-  theme: string | undefined
-}
+import { MyContext } from 'storage'
 
-export default function Header(props: Props) {
-  return (
-    <header className={cx('header', props.theme)}>
-      <IconLogo className='header-logo' />
-    </header>
-  )
+export default function Header() {
+  const { layoutSetting } = useContext(MyContext)
+  const theme = layoutSetting?.theme
+
+  return <header className={cx('header header-b', theme)}></header>
 }

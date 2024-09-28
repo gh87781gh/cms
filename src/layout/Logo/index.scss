@@ -1,0 +1,15 @@
+$logo-bg-dark: $color-gray-6;
+$logo-bg-light: $color-gray-2;
+$logo-color-dark: $color-gray-2;
+$logo-color-light: $color-gray-2;
+
+.logo {
+  &.dark {
+    background-color: $logo-bg-dark;
+    color: $logo-color-dark;
+  }
+  &.light {
+    background-color: $logo-bg-light;
+    color: $logo-color-light;
+  }
+}

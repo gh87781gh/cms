@@ -1,2 +1,24 @@
 .main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-a {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .article {
+    width: calc(100vw - $layout-sidebar-width);
+    height: calc(100vh - $layout-header-height);
+  }
+}
+.container-b {
+  width: calc(100vw - $layout-sidebar-width);
+  display: flex;
+  flex-wrap: nowrap;
+
+  .article {
+    width: 100%;
+    height: calc(100vh - $layout-header-height);
+  }
 }
