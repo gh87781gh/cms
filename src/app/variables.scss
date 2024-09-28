@@ -105,12 +105,14 @@ $z-index-header: 2;
 $z-index-sidebar: 1;
 
 // NOTE layout
+$layout-editor-width: 400px;
 $layout-header-height: 64px;
 $layout-sidebar-width: 240px;
+$layout-article-width: 1200px;
 
 // NOTE mixins
 @mixin resetList() {
   padding-left: unset;
-  margin-bottom: unset;
+  margin: unset;
   list-style-type: none;
 }

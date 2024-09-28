@@ -7,16 +7,10 @@ import cx from 'utils/cx'
 import { IconLogo } from 'utils/icons'
 import { MyContext } from 'storage'
 
-type Props = {
-  className?: string
-}
-
-export default function Logo(props: Props) {
+export default function Logo() {
   const { layoutSetting } = useContext(MyContext)
   const theme = layoutSetting?.theme
-  return (
-    <IconLogo
-      className={cx('sidebar-logo sidebar-b', theme, props.className)}
-    />
-  )
+  const primaryColor = layoutSetting?.primaryColor
+
+  return <IconLogo className={cx('logo', theme)} primaryColor={primaryColor} />
 }

@@ -1,6 +1,6 @@
 import Article from 'layout/Article'
 
-export default function Home() {
+export default function Page() {
   return (
     <Article>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod

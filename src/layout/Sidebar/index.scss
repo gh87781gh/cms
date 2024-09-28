@@ -82,4 +82,8 @@ $sidebar-padding-x: $gap-base;
 .sidebar-b {
   height: 100vh;
   z-index: $z-index-header;
+
+  .sidebar-list {
+    margin-top: $gap-xxl;
+  }
 }

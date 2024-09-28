@@ -1,6 +1,8 @@
 export type LayoutSettingType = {
-  theme: 'dark' | 'light'
   layout: LayoutModule
+  theme: 'dark' | 'light'
+  isShowThemeSwitch: boolean
+  primaryColor: string
 }
 
 export enum LayoutModule {

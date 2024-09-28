@@ -14,5 +14,9 @@ export default function Article({
   const { layoutSetting } = useContext(MyContext)
   const theme = layoutSetting?.theme
 
-  return <article className={cx('article', theme)}>{children}</article>
+  return (
+    <article className={cx('article', theme)}>
+      <div className='article-container'>{children}</div>
+    </article>
+  )
 }

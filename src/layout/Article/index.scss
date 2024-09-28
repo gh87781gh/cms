@@ -1,4 +1,4 @@
-$article-bg-dark: $color-gray-7;
+$article-bg-dark: $color-gray-8;
 $article-bg-light: $color-gray-1;
 $article-color-dark: $color-text-dark;
 $article-color-light: $color-text-light;
@@ -12,4 +12,10 @@ $article-color-light: $color-text-light;
     background-color: $article-bg-light;
     color: $article-color-light;
   }
+  height: calc(100vh - $layout-header-height);
+}
+.article-container {
+  padding: $gap-base;
+  width: $layout-article-width;
+  margin: 0 auto;
 }

@@ -1,0 +1,12 @@
+.editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $layout-editor-width;
+  height: 100vh;
+  background-color: $color-gray-1;
+  border-right: 1px solid $color-gray-3;
+  z-index: 1000;
+  padding: 20px;
+  color: $color-blue-6;
+}

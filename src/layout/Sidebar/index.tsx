@@ -19,6 +19,7 @@ export default function Sidebar() {
   }
   const theme = layoutSetting?.theme
   const layout = layoutSetting?.layout
+  const isShowThemeSwitch = layoutSetting?.isShowThemeSwitch
 
   const renderMenu = () => {
     return (
@@ -48,19 +49,21 @@ export default function Sidebar() {
   }
   const renderSwitchTheme = () => {
     return (
-      <>
-        Light{' '}
-        <Switch
-          checked={theme === 'dark'}
-          onChange={(checked) =>
-            setLayoutSetting((prev) => ({
-              ...prev,
-              theme: checked ? 'dark' : 'light'
-            }))
-          }
-        />{' '}
-        Dark
-      </>
+      isShowThemeSwitch && (
+        <>
+          Light{' '}
+          <Switch
+            checked={theme === 'dark'}
+            onChange={(checked) =>
+              setLayoutSetting((prev) => ({
+                ...prev,
+                theme: checked ? 'dark' : 'light'
+              }))
+            }
+          />{' '}
+          Dark
+        </>
+      )
     )
   }
   return match(layout)

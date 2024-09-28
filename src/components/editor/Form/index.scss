@@ -1,0 +1,22 @@
+.form-group {
+  label {
+    display: block;
+    font-size: $font-size-lg;
+    margin-bottom: $gap-base;
+  }
+  .form-group-content {
+    font-size: $font-size-base;
+    color: $color-text-light;
+  }
+  &:not(:last-child) {
+    margin-bottom: $gap-xxl;
+  }
+}
+
+.checkbox {
+  & > span {
+    display: inline-block;
+    font-size: $font-size-base;
+    color: $color-text-light;
+  }
+}

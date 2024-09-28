@@ -19,6 +19,7 @@ $header-padding-x: $gap-base;
     color: $header-color-light;
     box-shadow: $header-shadow-light;
   }
+  position: relative;
   height: $header-height;
   display: flex;
   align-items: center;

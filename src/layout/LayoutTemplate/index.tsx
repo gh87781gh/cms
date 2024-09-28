@@ -8,37 +8,41 @@ import Header from 'layout/Header'
 import Sidebar from 'layout/Sidebar'
 import { match } from 'ts-pattern'
 import { ConfigProvider } from 'antd'
-
+import { usePathname } from 'next/navigation'
 import { MyContext } from 'storage'
 import { LayoutSettingType, LayoutModule } from './types'
+import cx from 'utils/cx'
+import config from 'config'
 
-import styles from 'app/variablesExport.module.scss'
+import Editor from 'layout/Editor'
 
 export default function LayoutTemplate({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const pathname = usePathname()
+  const { ...params } = config
   const [layoutSetting, setLayoutSetting] = useState<LayoutSettingType>({
-    theme: 'light',
-    layout: LayoutModule.a
+    ...params
   })
 
   return (
     <MyContext.Provider value={{ layoutSetting, setLayoutSetting }}>
       <ConfigProvider
         theme={{
+          /* here is antd style tokens */
           token: {
-            /* here is antd global tokens */
-            colorPrimary: styles.colorPrimary,
-            colorPrimaryBg: styles.colorPrimary
-          },
-          components: {
-            Switch: {}
+            colorPrimary: layoutSetting.primaryColor,
+            colorPrimaryBg: layoutSetting.primaryColor
           }
+          // components: {
+          //   Switch: {}
+          // }
         }}
       >
-        <main className='main'>
+        {pathname === '/editor' && <Editor />}
+        <main className={cx(pathname === '/editor' ? 'main-editor' : 'main')}>
           {match(layoutSetting.layout)
             .with(LayoutModule.a, () => (
               <>
