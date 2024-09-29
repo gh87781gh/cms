@@ -62,7 +62,9 @@ export default function LayoutTemplate({
             .with(LayoutModule.b, () => (
               <div className='container-b'>
                 <Sidebar />
-                <div className='container-b-content'>
+                <div
+                  className={cx('container-b-content', isAdmin ? 'admin' : '')}
+                >
                   <Header />
                   <div className='container-b-main'>{children}</div>
                 </div>

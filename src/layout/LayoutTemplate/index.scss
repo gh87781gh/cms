@@ -23,6 +23,12 @@
   display: flex;
   flex-wrap: nowrap;
 
+  .container-b-content {
+    &.admin {
+      width: calc(100vw - $layout-sidebar-width - $layout-editor-width);
+    }
+  }
+
   .container-b-main {
     width: 100%;
     height: calc(100vh - $layout-header-height);
