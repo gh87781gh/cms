@@ -15,16 +15,19 @@ export enum GamesMode {
 
 export type GamesViewType = {
   views: 'games'
+  id: number
   title: string
   mode: GamesMode
   queries: string
 }
 export type BannerViewType = {
   views: 'banner'
+  id: number
+  title: string
   mode: BannerMode
   images: string[]
 }
-type ViewTypeMap = {
+export type ViewTypeMap = {
   'games': GamesViewType
   'banner': BannerViewType
 }
