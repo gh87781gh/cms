@@ -1,16 +1,10 @@
 import type { CSSProperties, FC } from 'react'
 import { memo } from 'react'
 import { useDrag, useDrop } from 'react-dnd'
+import './index.scss'
+import { MenuOutlined } from '@ant-design/icons'
 
 import { ItemTypes } from './types'
-
-const style: CSSProperties = {
-  border: '1px solid gray',
-  padding: '0.5rem 1rem',
-  marginBottom: '.5rem',
-  backgroundColor: 'white',
-  cursor: 'move'
-}
 
 export interface CardProps {
   id: string
@@ -64,8 +58,15 @@ export const Card: FC<CardProps> = memo(function Card({
 
   const opacity = isDragging ? 0 : 1
   return (
-    <div ref={(node) => drag(drop(node)) as any} style={{ ...style, opacity }}>
-      {text}
+    <div
+      className='dnd-item'
+      ref={(node) => drag(drop(node)) as any}
+      style={{ opacity }}
+    >
+      <div className='dnd-item-drag'>
+        <MenuOutlined />
+      </div>
+      <div className='dnd-item-content'>{text}</div>
     </div>
   )
 })

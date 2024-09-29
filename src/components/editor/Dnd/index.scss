@@ -1,0 +1,18 @@
+.dnd-item {
+  border: 1px solid gray;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.dnd-item-drag {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dnd-item-content {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
