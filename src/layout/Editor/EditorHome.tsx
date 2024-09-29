@@ -5,15 +5,18 @@ import './index.scss'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { match } from 'ts-pattern'
-import { GamesViewType, BannerViewType } from 'layout/LayoutTemplate/types'
+
 import { MyContext } from 'storage'
 import {
+  GamesViewType,
+  BannerViewType,
   LayoutSettingType,
   ViewTypeMap,
   ViewType
 } from 'layout/LayoutTemplate/types'
 import { Container } from 'components/editor/Dnd'
 import EditorHomeView from './EditorHomeView'
+
 export default function EditorHome() {
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType

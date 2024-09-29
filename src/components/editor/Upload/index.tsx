@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef } from 'react'
 import { UploadOutlined } from '@ant-design/icons'
 import Image from 'next/image'
 import './index.scss'
