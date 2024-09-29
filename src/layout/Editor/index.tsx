@@ -1,25 +1,17 @@
 'use client'
 
-import { useContext, useState } from 'react'
+import { useContext, useState, useRef, useEffect } from 'react'
 import './index.scss'
-import { generate } from '@ant-design/colors'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { useRouter } from 'next/navigation'
+import dynamic from 'next/dynamic'
+
 import { MyContext } from 'storage'
 import { match } from 'ts-pattern'
-import {
-  FormGroup,
-  FormGroupContent,
-  Select,
-  Checkbox,
-  InputNumber
-} from 'components/editor/Form'
-import ColorPicker from 'components/editor/ColorPicker'
-import Switch from 'components/Switch'
-import { LayoutModule, LayoutSettingType } from 'layout/LayoutTemplate/types'
+import { LayoutSettingType } from 'layout/LayoutTemplate/types'
 import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
+import Modal from 'components/editor/Modal'
 import config from 'config'
-
 import EditorLayout from './EditorLayout'
 import EditorHome from './EditorHome'
 
@@ -29,6 +21,7 @@ enum LevelEnum {
 }
 
 export default function Editor() {
+  const JSONRef = useRef<any>(null)
   const router = useRouter()
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType
@@ -40,6 +33,15 @@ export default function Editor() {
   const resetConfig = () => {
     setLayoutSetting({ ...config })
   }
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  useEffect(() => {
+    if (JSONRef.current) {
+      JSONRef.current.textContent = JSON.stringify(layoutSetting, null, 4)
+    }
+  }, [layoutSetting, JSONRef.current])
+
   return (
     <div className='editor'>
       <PerfectScrollbar>
@@ -84,10 +86,20 @@ export default function Editor() {
             <BtnOutline size='large' onClick={resetConfig}>
               Reset
             </BtnOutline>
-            <BtnPrimary size='large'>Save</BtnPrimary>
+            <BtnPrimary size='large' onClick={() => setIsModalOpen(true)}>
+              Save
+            </BtnPrimary>
           </BtnGroup>
         </div>
       </PerfectScrollbar>
+      <Modal
+        title='Save Result'
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={null}
+      >
+        <pre ref={JSONRef} />
+      </Modal>
     </div>
   )
 }

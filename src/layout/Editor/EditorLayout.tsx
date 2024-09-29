@@ -48,16 +48,10 @@ export default function EditorLayout() {
               layout: value
             }))
           }}
-          options={[
-            {
-              label: 'layout a',
-              value: LayoutModule.a
-            },
-            {
-              label: 'layout b',
-              value: LayoutModule.b
-            }
-          ]}
+          options={Object.keys(LayoutModule).map((key) => ({
+            label: key,
+            value: LayoutModule[key as keyof typeof LayoutModule]
+          }))}
         />
       </FormGroup>
       <FormGroup>
