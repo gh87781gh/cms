@@ -2,7 +2,6 @@ import update from 'immutability-helper'
 import type { FC } from 'react'
 import { memo, useCallback, useState, useEffect } from 'react'
 import { useDrop } from 'react-dnd'
-import cx from 'utils/cx'
 import { Card } from './Card'
 import { ItemTypes } from './types'
 
@@ -53,8 +52,8 @@ export const Container: FC<{
   )
 
   useEffect(() => {
-    setItems && setItems(cards)
-  }, [cards])
+    setItems(cards)
+  }, [cards, setItems])
 
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }))
   return (

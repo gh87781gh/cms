@@ -2,7 +2,6 @@
 
 import { useContext } from 'react'
 import './index.scss'
-import cx from 'utils/cx'
 import Link from 'next/link'
 import { match } from 'ts-pattern'
 

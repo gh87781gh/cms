@@ -4,7 +4,6 @@ import { useContext, useState, useRef, useEffect } from 'react'
 import './index.scss'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { useRouter } from 'next/navigation'
-import dynamic from 'next/dynamic'
 
 import { MyContext } from 'storage'
 import { match } from 'ts-pattern'
@@ -40,7 +39,7 @@ export default function Editor() {
     if (JSONRef.current) {
       JSONRef.current.textContent = JSON.stringify(layoutSetting, null, 4)
     }
-  }, [layoutSetting, JSONRef.current])
+  }, [layoutSetting])
 
   return (
     <div className='editor'>

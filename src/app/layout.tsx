@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
 import './normalize.scss'
@@ -32,7 +33,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className='body'>
         <AntdRegistry>
-          <LayoutTemplate>{children}</LayoutTemplate>
+          <Suspense>
+            <LayoutTemplate>{children}</LayoutTemplate>
+          </Suspense>
         </AntdRegistry>
       </body>
     </html>
