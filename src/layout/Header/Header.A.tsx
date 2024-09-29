@@ -18,8 +18,12 @@ export default function Header(props: PropsType) {
 
   return (
     <header className={cx('header header-a', theme)}>
-      <Logo />
-      {props.renderBtns()}
+      <div className='header-logo'>
+        <Logo />
+      </div>
+      <div className='header-container'>
+        <div className='header-container-btns'>{props.renderBtns()}</div>
+      </div>
     </header>
   )
 }

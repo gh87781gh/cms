@@ -41,7 +41,33 @@ $header-padding-x: $gap-base;
 
 .header-a {
   z-index: $z-index-header;
+  display: flex;
+  align-items: center;
+
+  .header-logo {
+    width: calc($layout-sidebar-width - $header-padding-x);
+  }
+
+  .header-container {
+    width: calc(100% - $layout-sidebar-width);
+  }
+
+  .header-container-btns {
+    width: $layout-article-width;
+    margin: 0 auto;
+    text-align: right;
+    padding-left: $header-padding-x;
+    padding-right: $header-padding-x;
+  }
 }
 .header-b {
   z-index: $z-index-sidebar;
+
+  .header-container {
+    width: $layout-article-width;
+    margin: 0 auto;
+    text-align: right;
+    padding-left: $header-padding-x;
+    padding-right: $header-padding-x;
+  }
 }

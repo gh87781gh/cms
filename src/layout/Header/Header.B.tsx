@@ -16,7 +16,7 @@ export default function Header(props: PropsType) {
 
   return (
     <header className={cx('header header-b', theme)}>
-      {props.renderBtns()}
+      <div className='header-container'>{props.renderBtns()}</div>
     </header>
   )
 }
