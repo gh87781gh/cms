@@ -17,10 +17,12 @@ export default function Page() {
     <Article>
       {views?.map((view, index: number) => (
         <Section key={index}>
-          {'title' in view && view.title && <h2>{view.title}</h2>}
           {match(view.views)
             .with('games', () => (
-              <Games key={index} view={view as GamesViewType} />
+              <>
+                {'title' in view && view.title && <h2>{view.title}</h2>}
+                <Games key={index} view={view as GamesViewType} />
+              </>
             ))
             .with('banner', () => (
               <Banner key={index} view={view as BannerViewType} />
