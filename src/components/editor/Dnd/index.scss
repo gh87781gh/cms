@@ -4,6 +4,11 @@
   background-color: white;
   display: flex;
   flex-wrap: nowrap;
+  cursor: move;
+
+  &.active {
+    border: 2px solid $color-editing-border;
+  }
 }
 .dnd-item-drag {
   width: 36px;

@@ -17,7 +17,7 @@ export default function Page() {
     <Article>
       {views?.map((view, index: number) => (
         <Section key={index}>
-          {match(view.views)
+          {match(view.viewType)
             .with('games', () => (
               <>
                 {'title' in view && view.title && <h2>{view.title}</h2>}

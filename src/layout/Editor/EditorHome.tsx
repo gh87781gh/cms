@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './index.scss'
 import { generate } from '@ant-design/colors'
 import { DndProvider } from 'react-dnd'
@@ -30,6 +30,7 @@ export default function EditorHome() {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
   }
+  const [activeId, setActiveId] = useState<number | null>(null)
 
   const setViews = (views: ViewTypeMap[ViewType][]) => {
     setLayoutSetting((prev: LayoutSettingType) => ({
@@ -44,8 +45,11 @@ export default function EditorHome() {
         <Container
           items={layoutSetting.homepageViews}
           setItems={setViews as React.Dispatch<React.SetStateAction<any[]>>}
+          activeId={activeId}
+          setActiveId={setActiveId}
         />
       </DndProvider>
+      {activeId && <div>{activeId}</div>}
     </>
   )
 }

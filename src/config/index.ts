@@ -12,21 +12,21 @@ const config: LayoutSettingType = {
   homepageViews: [
     {
       id: 0,
-      views: 'banner',
+      viewType: 'banner',
       title: 'hero',
       mode: BannerMode.b,
       images: [],
     },
     {
       id: 1,
-      views: 'games',
+      viewType: 'games',
       title: 'Top',
       mode: GamesMode.a,
       queries: '',
     },
     {
       id: 2,
-      views: 'games',
+      viewType: 'games',
       title: 'Recommend',
       mode: GamesMode.a,
       queries: ''

@@ -14,14 +14,14 @@ export enum GamesMode {
 }
 
 export type GamesViewType = {
-  views: 'games'
+  viewType: 'games'
   id: number
   title: string
   mode: GamesMode
   queries: string
 }
 export type BannerViewType = {
-  views: 'banner'
+  viewType: 'banner'
   id: number
   title: string
   mode: BannerMode

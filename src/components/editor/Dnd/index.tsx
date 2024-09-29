@@ -2,7 +2,7 @@ import update from 'immutability-helper'
 import type { FC } from 'react'
 import { memo, useCallback, useState, useEffect } from 'react'
 import { useDrop } from 'react-dnd'
-
+import cx from 'utils/cx'
 import { Card } from './Card'
 import { ItemTypes } from './types'
 
@@ -17,7 +17,9 @@ export interface ContainerState {
 export const Container: FC<{
   items: any[]
   setItems: React.Dispatch<React.SetStateAction<any[]>>
-}> = memo(function Container({ items, setItems }) {
+  activeId: number | null
+  setActiveId: React.Dispatch<React.SetStateAction<number | null>>
+}> = memo(function Container({ items, setItems, activeId, setActiveId }) {
   const [cards, setCards] = useState(items)
 
   const findCard = useCallback(
@@ -37,6 +39,7 @@ export const Container: FC<{
   const moveCard = useCallback(
     (id: string, atIndex: number) => {
       const { card, index } = findCard(id)
+      setActiveId(card.id)
       setCards(
         update(cards, {
           $splice: [
@@ -46,7 +49,7 @@ export const Container: FC<{
         })
       )
     },
-    [findCard, cards, setCards]
+    [findCard, cards, setCards, setActiveId]
   )
 
   useEffect(() => {
@@ -60,9 +63,11 @@ export const Container: FC<{
         <Card
           key={card.id}
           id={`${card.id}`}
-          text={`${card.views}-${card.title}`}
+          text={`${card.viewType}-${card.title}`}
           moveCard={moveCard}
           findCard={findCard}
+          activeId={activeId}
+          setActiveId={setActiveId}
         />
       ))}
     </div>
