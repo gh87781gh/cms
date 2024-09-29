@@ -10,7 +10,8 @@ import {
   FormGroup,
   FormGroupContent,
   Select,
-  Checkbox
+  Checkbox,
+  InputNumber
 } from 'components/editor/Form'
 import ColorPicker from 'components/editor/ColorPicker'
 import Switch from 'components/Switch'
@@ -23,6 +24,13 @@ export default function Editor() {
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
+  }
+
+  const onChange = (key: string, value: number) => {
+    setLayoutSetting((prev) => ({
+      ...prev,
+      [key]: value
+    }))
   }
 
   const generateColor = (key: string, color: string) => {
@@ -96,7 +104,6 @@ export default function Editor() {
           <FormGroup>
             <label>Colors</label>
             <FormGroupContent>
-              Primary color{' '}
               <ColorPicker
                 style={{ position: 'relative', bottom: '-7px' }}
                 value={layoutSetting?.primaryColor}
@@ -105,10 +112,10 @@ export default function Editor() {
                 onChange={(value) => {
                   generateColor('primaryColor', value.toHexString())
                 }}
-              />
+              />{' '}
+              Primary color
             </FormGroupContent>
             <FormGroupContent>
-              Primary Button text color{' '}
               <ColorPicker
                 style={{ position: 'relative', bottom: '-7px' }}
                 value={layoutSetting?.btnTextColor}
@@ -117,7 +124,38 @@ export default function Editor() {
                 onChange={(value) => {
                   generateColor('btnTextColor', value.toHexString())
                 }}
-              />
+              />{' '}
+              Primary Button text color
+            </FormGroupContent>
+          </FormGroup>
+          <FormGroup>
+            <label>Border radius</label>
+            <FormGroupContent>
+              <InputNumber
+                min={0}
+                precision={0}
+                value={layoutSetting?.borderRadiusSM}
+                onChange={(value: any) => onChange('borderRadiusSM', value)}
+              />{' '}
+              small size components like Button, Input, Select
+            </FormGroupContent>
+            <FormGroupContent>
+              <InputNumber
+                min={0}
+                precision={0}
+                value={layoutSetting?.borderRadius}
+                onChange={(value: any) => onChange('borderRadius', value)}
+              />{' '}
+              base components
+            </FormGroupContent>
+            <FormGroupContent>
+              <InputNumber
+                min={0}
+                precision={0}
+                value={layoutSetting?.borderRadiusLG}
+                onChange={(value: any) => onChange('borderRadiusLG', value)}
+              />{' '}
+              some large border components like Banner, Card, Modal
             </FormGroupContent>
           </FormGroup>
         </PerfectScrollbar>

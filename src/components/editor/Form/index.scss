@@ -7,6 +7,7 @@
   .form-group-content {
     font-size: $font-size-base;
     color: $color-text-light;
+    margin-bottom: $gap-sm;
   }
   &:not(:last-child) {
     margin-bottom: $gap-xxl;
