@@ -52,6 +52,7 @@ export const Container: FC<{
   )
 
   useEffect(() => {
+    if (!setItems) return
     setItems(cards)
   }, [cards, setItems])
 

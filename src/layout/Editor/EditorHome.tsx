@@ -27,12 +27,15 @@ export default function EditorHome() {
     return layoutSetting.homepageViews.find((view) => view.id === activeId)
   }, [layoutSetting, activeId])
 
-  const setViews = (views: ViewTypeMap[ViewType][]) => {
-    setLayoutSetting((prev: LayoutSettingType) => ({
-      ...prev,
-      homepageViews: views
-    }))
-  }
+  const setViews = useCallback(
+    (views: ViewTypeMap[ViewType][]) => {
+      setLayoutSetting((prev: LayoutSettingType) => ({
+        ...prev,
+        homepageViews: views
+      }))
+    },
+    [setLayoutSetting]
+  )
 
   const renderEditorViewGames = (view: GamesViewType) => {
     console.log('view', view)
