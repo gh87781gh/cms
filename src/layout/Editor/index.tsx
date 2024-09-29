@@ -36,10 +36,10 @@ export default function Editor() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
-    if (JSONRef.current) {
+    if (JSONRef.current && isModalOpen) {
       JSONRef.current.textContent = JSON.stringify(layoutSetting, null, 4)
     }
-  }, [layoutSetting])
+  }, [layoutSetting, isModalOpen])
 
   return (
     <div className='editor'>
@@ -93,11 +93,14 @@ export default function Editor() {
       </PerfectScrollbar>
       <Modal
         title='Save Result'
+        width={1200}
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
         footer={null}
       >
-        <pre ref={JSONRef} />
+        <div style={{ width: '100%', height: 700, overflow: 'auto' }}>
+          <pre ref={JSONRef} />
+        </div>
       </Modal>
     </div>
   )
