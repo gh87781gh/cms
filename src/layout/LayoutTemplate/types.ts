@@ -1,16 +1,14 @@
 export enum LayoutModule {
-  'a',
-  'b'
+  a = '0',
+  b = '1'
 }
-
 export enum BannerMode {
-  'a',
-  'b',
-  'c'
+  a = '0',
+  b = '1',
 }
 export enum GamesMode {
-  'a',
-  'b'
+  a = '0',
+  b = '1'
 }
 
 export type GamesViewType = {

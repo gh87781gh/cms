@@ -14,53 +14,86 @@ export default function Banner(props: PropsType) {
   const borderRadiusLG = layoutSetting?.borderRadiusLG
 
   return (
-    <div className='banner-b'>
+    <div
+      className='banner-b'
+      style={{ borderRadius: borderRadiusLG, overflow: 'hidden' }}
+    >
       <div className='banner-b-left'>
-        <div
-          className='banner-b-left-top'
-          style={{
-            borderTopLeftRadius: borderRadiusLG
-          }}
-        >
-          {props.view?.images?.[1] && (
-            <Image src={props.view?.images?.[1]} alt='banner-b-left-top' />
+        <div className='banner-b-left-top'>
+          {props.view?.images?.[0] && (
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative'
+              }}
+            >
+              <Image
+                src={props.view?.images?.[0]}
+                alt='banner-b-left-top'
+                fill
+              />
+            </div>
           )}
         </div>
-        <div
-          className='banner-b-left-bottom'
-          style={{
-            borderBottomLeftRadius: borderRadiusLG
-          }}
-        >
-          {props.view?.images?.[2] && (
-            <Image src={props.view?.images?.[2]} alt='banner-b-left-bottom' />
+        <div className='banner-b-left-bottom'>
+          {props.view?.images?.[1] && (
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative'
+              }}
+            >
+              <Image
+                src={props.view?.images?.[1]}
+                alt='banner-b-left-bottom'
+                fill
+              />
+            </div>
           )}
         </div>
       </div>
       <div className='banner-b-center'>
-        {props.view?.images?.[0] && (
-          <Image src={props.view?.images?.[0]} alt='banner-b-center' />
+        {props.view?.images?.[2] && (
+          <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <Image src={props.view?.images?.[2]} alt='banner-b-center' fill />
+          </div>
         )}
       </div>
       <div className='banner-b-right'>
-        <div
-          className='banner-b-right-top'
-          style={{
-            borderTopRightRadius: borderRadiusLG
-          }}
-        >
-          {props.view?.images?.[1] && (
-            <Image src={props.view?.images?.[1]} alt='banner-b-right-top' />
+        <div className='banner-b-right-top'>
+          {props.view?.images?.[3] && (
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative'
+              }}
+            >
+              <Image
+                src={props.view?.images?.[3]}
+                alt='banner-b-right-top'
+                fill
+              />
+            </div>
           )}
         </div>
-        <div
-          className='banner-b-right-bottom'
-          style={{
-            borderBottomRightRadius: borderRadiusLG
-          }}
-        >
-          {props.view?.images?.[2] && (
-            <Image src={props.view?.images?.[2]} alt='banner-b-right-bottom' />
+        <div className='banner-b-right-bottom'>
+          {props.view?.images?.[4] && (
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                position: 'relative'
+              }}
+            >
+              <Image
+                src={props.view?.images?.[4]}
+                alt='banner-b-right-bottom'
+                fill
+              />
+            </div>
           )}
         </div>
       </div>

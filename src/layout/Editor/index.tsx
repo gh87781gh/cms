@@ -42,8 +42,8 @@ export default function Editor() {
   }
   return (
     <div className='editor'>
-      <div className='editor-content'>
-        <PerfectScrollbar>
+      <PerfectScrollbar>
+        <div className='editor-content'>
           <h1>Editor mode</h1>
           <BtnGroup>
             <BtnOutline
@@ -75,19 +75,19 @@ export default function Editor() {
               </>
             ))
             .otherwise(() => null)}
-        </PerfectScrollbar>
-      </div>
-      <div className='editor-footer'>
-        <BtnGroup>
-          <BtnOutline size='large' onClick={() => router.push('/')}>
-            Exit
-          </BtnOutline>
-          <BtnOutline size='large' onClick={resetConfig}>
-            Reset
-          </BtnOutline>
-          <BtnPrimary size='large'>Save</BtnPrimary>
-        </BtnGroup>
-      </div>
+        </div>
+        <div className='editor-footer'>
+          <BtnGroup>
+            <BtnOutline size='large' onClick={() => router.push('/')}>
+              Exit
+            </BtnOutline>
+            <BtnOutline size='large' onClick={resetConfig}>
+              Reset
+            </BtnOutline>
+            <BtnPrimary size='large'>Save</BtnPrimary>
+          </BtnGroup>
+        </div>
+      </PerfectScrollbar>
     </div>
   )
 }

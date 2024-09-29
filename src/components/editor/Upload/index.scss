@@ -1,0 +1,16 @@
+.upload {
+  width: 100px;
+  height: 100px;
+  background-color: $color-gray-3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $gap-sm;
+  color: $color-gray-7;
+  cursor: pointer;
+}
+.upload-image {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}

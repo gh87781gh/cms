@@ -14,37 +14,46 @@ export default function Banner(props: PropsType) {
   const borderRadiusLG = layoutSetting?.borderRadiusLG
 
   return (
-    <div className='banner-a'>
-      <div
-        className='banner-a-left'
-        style={{
-          borderTopLeftRadius: borderRadiusLG,
-          borderBottomLeftRadius: borderRadiusLG
-        }}
-      >
+    <div
+      className='banner-a'
+      style={{ borderRadius: borderRadiusLG, overflow: 'hidden' }}
+    >
+      <div className='banner-a-left'>
         {props.view?.images?.[0] && (
-          <Image src={props.view?.images?.[0]} alt='banner-a-left' />
+          <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+            <Image
+              src={props.view?.images?.[0]}
+              alt='banner-a-left'
+              fill={true}
+            />
+          </div>
         )}
       </div>
       <div className='banner-a-right'>
-        <div
-          className='banner-a-right-top'
-          style={{
-            borderTopRightRadius: borderRadiusLG
-          }}
-        >
+        <div className='banner-a-right-top'>
           {props.view?.images?.[1] && (
-            <Image src={props.view?.images?.[1]} alt='banner-a-right-top' />
+            <div
+              style={{ width: '100%', height: '100%', position: 'relative' }}
+            >
+              <Image
+                src={props.view?.images?.[1]}
+                alt='banner-a-right-top'
+                fill={true}
+              />
+            </div>
           )}
         </div>
-        <div
-          className='banner-a-right-bottom'
-          style={{
-            borderBottomRightRadius: borderRadiusLG
-          }}
-        >
+        <div className='banner-a-right-bottom'>
           {props.view?.images?.[2] && (
-            <Image src={props.view?.images?.[2]} alt='banner-a-right-bottom' />
+            <div
+              style={{ width: '100%', height: '100%', position: 'relative' }}
+            >
+              <Image
+                src={props.view?.images?.[2]}
+                alt='banner-a-right-bottom'
+                fill={true}
+              />
+            </div>
           )}
         </div>
       </div>

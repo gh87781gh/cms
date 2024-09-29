@@ -1,41 +1,28 @@
 'use client'
 
-import { useContext, useState } from 'react'
+import { useContext, useState, useCallback, useMemo } from 'react'
 import './index.scss'
-import { generate } from '@ant-design/colors'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { match } from 'ts-pattern'
-import {
-  GamesViewType,
-  BannerViewType,
-  BannerMode
-} from 'layout/LayoutTemplate/types'
+import { GamesViewType, BannerViewType } from 'layout/LayoutTemplate/types'
 import { MyContext } from 'storage'
-import {
-  FormGroup,
-  FormGroupContent,
-  Select,
-  Checkbox,
-  InputNumber,
-  Input
-} from 'components/editor/Form'
-import ColorPicker from 'components/editor/ColorPicker'
-import Switch from 'components/Switch'
 import {
   LayoutSettingType,
   ViewTypeMap,
   ViewType
 } from 'layout/LayoutTemplate/types'
-
 import { Container } from 'components/editor/Dnd'
-
+import EditorHomeView from './EditorHomeView'
 export default function EditorHome() {
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
   }
   const [activeId, setActiveId] = useState<number | null>(null)
+  const activeView = useMemo(() => {
+    return layoutSetting.homepageViews.find((view) => view.id === activeId)
+  }, [layoutSetting, activeId])
 
   const setViews = (views: ViewTypeMap[ViewType][]) => {
     setLayoutSetting((prev: LayoutSettingType) => ({
@@ -44,53 +31,23 @@ export default function EditorHome() {
     }))
   }
 
-  const renderEditorViewBanner = (view: BannerViewType) => {
-    const { title, mode, images } = view
-
-    const onChange = (key: keyof BannerViewType, value: string | number) => {
-      const oldViews = [...layoutSetting.homepageViews]
-      const viewIndex = oldViews.findIndex((view) => view.id === activeId)
-      if (viewIndex === -1) return
-      oldViews[viewIndex] = { ...oldViews[viewIndex], [key]: value }
-      setViews(oldViews)
-    }
-    return (
-      <>
-        <FormGroup>
-          <label>Banner Mode</label>
-          <Select
-            value={mode}
-            onChange={(value) => onChange('mode', value)}
-            options={[
-              {
-                label: 'Banner a',
-                value: BannerMode.a
-              },
-              {
-                label: 'Banner b',
-                value: BannerMode.b
-              }
-            ]}
-          />
-        </FormGroup>
-      </>
-    )
-  }
   const renderEditorViewGames = (view: GamesViewType) => {
     return null
   }
 
-  const renderEditorView = (activeId: number) => {
-    const view = layoutSetting.homepageViews.find(
-      (view) => view.id === activeId
-    )
-    if (!view) return null
+  const renderEditorView = useCallback(() => {
+    if (!activeView || activeId === null) return null
 
-    return match(view.viewType)
-      .with('banner', () => renderEditorViewBanner(view as BannerViewType))
-      .with('games', () => renderEditorViewGames(view as GamesViewType))
+    return match(activeView.viewType)
+      .with('banner', () => (
+        <EditorHomeView
+          view={activeView as BannerViewType}
+          activeId={activeId as number}
+        />
+      ))
+      .with('games', () => renderEditorViewGames(activeView as GamesViewType))
       .exhaustive()
-  }
+  }, [activeView, activeId])
 
   return (
     <>
@@ -102,9 +59,7 @@ export default function EditorHome() {
           setActiveId={setActiveId}
         />
       </DndProvider>
-      <div style={{ marginTop: '2rem' }}>
-        {activeId !== null && renderEditorView(activeId)}
-      </div>
+      <div style={{ marginTop: '2rem' }}>{renderEditorView()}</div>
     </>
   )
 }
