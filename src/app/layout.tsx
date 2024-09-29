@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { AntdRegistry } from '@ant-design/nextjs-registry'
 import './normalize.scss'
 import './layout.scss'
 
@@ -30,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className='body'>
-        <LayoutTemplate>{children}</LayoutTemplate>
+        <AntdRegistry>
+          <LayoutTemplate>{children}</LayoutTemplate>
+        </AntdRegistry>
       </body>
     </html>
   )
