@@ -1,19 +1,20 @@
 import './index.scss'
-// import { match } from 'ts-pattern'
+import { match } from 'ts-pattern'
 
-// import { GameType, GamesMode } from 'layout/LayoutTemplate/types'
-// import { useGames } from 'api/game/hooks'
+import { BannerViewType, BannerMode } from 'layout/LayoutTemplate/types'
 
-// import GamesA from './Games.A'
-// import GamesB from './Games.B'
+import BannerA from './Banner.A'
+import BannerB from './Banner.B'
 
-export default function Banner() {
-  // const { data, isLoading } = useGames(game.queries)
+type PropsType = {
+  view: BannerViewType
+}
 
-  // TODO 做到這裡，要做banner的東西
-  return <div>123</div>
-  // return match(game.mode)
-  //   .with(GamesMode.a, () => <GamesA title={game.title} data={data} />)
-  //   .with(GamesMode.b, () => <GamesB />)
-  //   .otherwise(() => null)
+export default function Banner(props: PropsType) {
+  // const { data, isLoading } = useBanner(game.queries)
+
+  return match(props.view.mode)
+    .with(BannerMode.a, () => <BannerA view={props.view} />)
+    .with(BannerMode.b, () => <BannerB view={props.view} />)
+    .otherwise(() => null)
 }

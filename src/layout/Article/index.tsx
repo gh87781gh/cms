@@ -3,6 +3,7 @@
 import { useContext } from 'react'
 import './index.scss'
 import cx from 'utils/cx'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 import { MyContext } from 'storage'
 
@@ -16,7 +17,9 @@ export default function Article({
 
   return (
     <article className={cx('article', theme)}>
-      <div className='article-container'>{children}</div>
+      <PerfectScrollbar>
+        <div className='article-container'>{children}</div>
+      </PerfectScrollbar>
     </article>
   )
 }

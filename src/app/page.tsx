@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { match } from 'ts-pattern'
 import { MyContext } from 'storage'
 
-import { GamesViewType } from 'layout/LayoutTemplate/types'
+import { GamesViewType, BannerViewType } from 'layout/LayoutTemplate/types'
 import Article from 'layout/Article'
 import Section from 'layout/Section'
 import Games from 'views/Games'
@@ -22,7 +22,9 @@ export default function Page() {
             .with('games', () => (
               <Games key={index} view={view as GamesViewType} />
             ))
-            .with('banner', () => <Banner key={index} />)
+            .with('banner', () => (
+              <Banner key={index} view={view as BannerViewType} />
+            ))
             .exhaustive()}
         </Section>
       ))}

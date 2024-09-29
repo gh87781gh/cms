@@ -15,7 +15,7 @@ $article-color-light: $color-text-light;
   height: 100%;
 }
 .article-container {
-  padding: $gap-base;
+  padding: $gap-xxl $gap-base;
   width: $layout-article-width;
   margin: 0 auto;
 }

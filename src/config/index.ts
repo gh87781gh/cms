@@ -12,8 +12,8 @@ const config: LayoutSettingType = {
   homepageViews: [
     {
       views: 'banner',
-      mode: BannerMode.a,
-      image: '',
+      mode: BannerMode.b,
+      images: [],
     },
     {
       views: 'games',

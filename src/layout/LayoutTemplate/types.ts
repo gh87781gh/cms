@@ -22,7 +22,7 @@ export type GamesViewType = {
 export type BannerViewType = {
   views: 'banner'
   mode: BannerMode
-  image: string
+  images: string[]
 }
 type ViewTypeMap = {
   'games': GamesViewType

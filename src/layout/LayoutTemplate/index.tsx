@@ -3,7 +3,6 @@
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import './index.scss'
 import { useState } from 'react'
-import PerfectScrollbar from 'react-perfect-scrollbar'
 import { useSearchParams } from 'next/navigation'
 import { match } from 'ts-pattern'
 
@@ -56,9 +55,7 @@ export default function LayoutTemplate({
                 <Header />
                 <div className='container-a'>
                   <Sidebar />
-                  <div className='container-a-main'>
-                    <PerfectScrollbar>{children}</PerfectScrollbar>
-                  </div>
+                  <div className='container-a-main'>{children}</div>
                 </div>
               </>
             ))
@@ -67,9 +64,7 @@ export default function LayoutTemplate({
                 <Sidebar />
                 <div className='container-b-content'>
                   <Header />
-                  <div className='container-b-main'>
-                    <PerfectScrollbar>{children}</PerfectScrollbar>
-                  </div>
+                  <div className='container-b-main'>{children}</div>
                 </div>
               </div>
             ))
@@ -77,16 +72,5 @@ export default function LayoutTemplate({
         </main>
       </ConfigProvider>
     </MyContext.Provider>
-
-    // TODO just for example
-    // import Image from 'next/image'
-    //   <Image
-    //   className={styles.logo}
-    //   src='https://nextjs.org/icons/next.svg'
-    //   alt='Next.js logo'
-    //   width={180}
-    //   height={38}
-    //   priority
-    // />
   )
 }

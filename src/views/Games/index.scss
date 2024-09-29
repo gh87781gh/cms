@@ -1,3 +1,5 @@
+$game-card-bgc: $color-gray-6;
+
 .games {
   @include resetList();
   display: flex;
@@ -7,5 +9,5 @@
 .games-empty-card {
   width: 11%;
   height: 150px;
-  background-color: $color-gray-6;
+  background-color: $game-card-bgc;
 }
