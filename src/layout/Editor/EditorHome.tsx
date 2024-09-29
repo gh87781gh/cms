@@ -25,56 +25,10 @@ import {
 
 import { Container } from 'components/editor/Dnd'
 
-const ITEMS = [
-  {
-    id: 1,
-    text: 'Write a cool JS library'
-  },
-  {
-    id: 2,
-    text: 'Make it generic enough'
-  },
-  {
-    id: 3,
-    text: 'Write README'
-  },
-  {
-    id: 4,
-    text: 'Create some examples'
-  },
-  {
-    id: 5,
-    text: 'Spam in Twitter and IRC to promote it'
-  },
-  {
-    id: 6,
-    text: '???'
-  },
-  {
-    id: 7,
-    text: 'PROFIT'
-  }
-]
-
 export default function EditorHome() {
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
-  }
-
-  const onChange = (key: string, value: number) => {
-    setLayoutSetting((prev) => ({
-      ...prev,
-      [key]: value
-    }))
-  }
-
-  const generateColor = (key: string, color: string) => {
-    const colors = generate(color)
-    setLayoutSetting((prev) => ({
-      ...prev,
-      [key]: colors[5]
-    }))
   }
 
   const setViews = (views: ViewTypeMap[ViewType][]) => {
@@ -92,9 +46,6 @@ export default function EditorHome() {
           setItems={setViews as React.Dispatch<React.SetStateAction<any[]>>}
         />
       </DndProvider>
-      {layoutSetting.homepageViews.map(
-        (view: ViewTypeMap[ViewType], index: number) => {} //TODO 要做 DND 排列component
-      )}
     </>
   )
 }
