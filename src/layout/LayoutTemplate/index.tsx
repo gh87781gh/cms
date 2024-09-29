@@ -53,7 +53,7 @@ export default function LayoutTemplate({
             .with(LayoutModule.a, () => (
               <>
                 <Header />
-                <div className='container-a'>
+                <div className={cx('container-a', isAdmin ? 'admin' : '')}>
                   <Sidebar />
                   <div className='container-a-main'>{children}</div>
                 </div>
@@ -62,9 +62,7 @@ export default function LayoutTemplate({
             .with(LayoutModule.b, () => (
               <div className='container-b'>
                 <Sidebar />
-                <div
-                  className={cx('container-b-content', isAdmin ? 'admin' : '')}
-                >
+                <div className='container-b-content'>
                   <Header />
                   <div className='container-b-main'>{children}</div>
                 </div>

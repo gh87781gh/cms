@@ -19,6 +19,7 @@ $header-padding-x: $gap-base;
     color: $header-color-light;
     box-shadow: $header-shadow-light;
   }
+  width: 100%;
   position: relative;
   height: $header-height;
   display: flex;
@@ -39,10 +40,8 @@ $header-padding-x: $gap-base;
 }
 
 .header-a {
-  width: 100vw;
   z-index: $z-index-header;
 }
 .header-b {
-  width: calc(100vw - $layout-sidebar-width);
   z-index: $z-index-sidebar;
 }

@@ -8,13 +8,18 @@ import { MyContext } from 'storage'
 
 import Logo from 'layout/Logo'
 
-export default function Header() {
+type PropsType = {
+  renderBtns: () => React.ReactNode
+}
+
+export default function Header(props: PropsType) {
   const { layoutSetting } = useContext(MyContext)
   const theme = layoutSetting?.theme
 
   return (
     <header className={cx('header header-a', theme)}>
       <Logo />
+      {props.renderBtns()}
     </header>
   )
 }

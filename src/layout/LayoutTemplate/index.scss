@@ -10,23 +10,21 @@
 }
 
 .container-a {
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
 
   .container-a-main {
-    width: calc(100vw - $layout-sidebar-width);
+    width: calc(100% - $layout-sidebar-width);
     height: calc(100vh - $layout-header-height);
   }
 }
 .container-b {
-  width: calc(100vw - $layout-sidebar-width);
+  width: 100%;
   display: flex;
-  flex-wrap: nowrap;
 
   .container-b-content {
-    &.admin {
-      width: calc(100vw - $layout-sidebar-width - $layout-editor-width);
-    }
+    width: 100%;
   }
 
   .container-b-main {
