@@ -15,8 +15,8 @@ export const config: LayoutSettingType = {
     layoutHeaderBgcLight: '#f0f0f0',
     layoutSidebarBgcDark: '#595959',
     layoutSidebarBgcLight: '#fafafa',
-    layoutArticleBgcDark: '#000',
-    layoutArticleBgcLight: '#000',
+    layoutArticleBgcDark: '#262626',
+    layoutArticleBgcLight: '#fafafa',
   },
   homepageViews: [
     {
