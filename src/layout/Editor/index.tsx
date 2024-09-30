@@ -28,7 +28,7 @@ export default function Editor() {
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
   }
 
-  const [level, setLevel] = useState<LevelEnum>(LevelEnum.Layout)
+  const [level, setLevel] = useState<LevelEnum>(LevelEnum.LayoutSetting)
 
   const resetConfig = () => {
     setLayoutSetting({ ...config })
@@ -77,7 +77,7 @@ export default function Editor() {
       </PerfectScrollbar>
       <Modal
         title='Save Result'
-        width={1200}
+        width={800}
         open={isModalOpen}
         onCancel={() => setIsModalOpen(false)}
         footer={null}
