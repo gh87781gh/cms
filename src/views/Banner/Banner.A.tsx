@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import './index.scss'
 import Image from 'next/image'
 
-import { BannerViewType } from 'layout/LayoutTemplate/types'
+import { BannerViewType } from 'config/types'
 import { MyContext } from 'storage'
 
 type PropsType = {

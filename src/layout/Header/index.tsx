@@ -3,7 +3,7 @@ import './index.scss'
 import { match } from 'ts-pattern'
 
 import { MyContext } from 'storage'
-import { LayoutModule } from 'layout/LayoutTemplate/types'
+import { LayoutModule } from 'config/types'
 import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
 
 import HeaderA from './Header.A'

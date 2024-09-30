@@ -1,7 +1,7 @@
 import './index.scss'
 import { match } from 'ts-pattern'
 
-import { BannerViewType, BannerMode } from 'layout/LayoutTemplate/types'
+import { BannerViewType, BannerMode } from 'config/types'
 
 import BannerA from './Banner.A'
 import BannerB from './Banner.B'

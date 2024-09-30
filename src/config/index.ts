@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { LayoutModule, LayoutSettingType, GamesMode, BannerMode } from 'layout/LayoutTemplate/types'
+import { LayoutModule, LayoutSettingType, GamesMode, BannerMode } from './types'
 
 export const config: LayoutSettingType = {
   layout: LayoutModule.a,

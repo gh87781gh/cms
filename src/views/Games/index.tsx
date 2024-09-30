@@ -1,7 +1,7 @@
 import './index.scss'
 import { match } from 'ts-pattern'
 
-import { GamesViewType, GamesMode } from 'layout/LayoutTemplate/types'
+import { GamesViewType, GamesMode } from 'config/types'
 import { useGames } from 'api/game/hooks'
 
 import GamesA from './Games.A'

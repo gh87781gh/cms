@@ -5,7 +5,7 @@ import './index.scss'
 import Link from 'next/link'
 import { match } from 'ts-pattern'
 
-import { LayoutModule, LayoutSettingType } from 'layout/LayoutTemplate/types'
+import { LayoutModule, LayoutSettingType } from 'config/types'
 import { MyContext } from 'storage'
 import Switch from 'components/Switch'
 import SidebarA from './Sidebar.A'

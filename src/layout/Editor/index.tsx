@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 
 import { MyContext } from 'storage'
 import { match } from 'ts-pattern'
-import { LayoutSettingType } from 'layout/LayoutTemplate/types'
+import { LayoutSettingType } from 'config/types'
 import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
 import { Select } from 'components/editor/Form'
 import Modal from 'components/editor/Modal'

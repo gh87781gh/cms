@@ -5,7 +5,7 @@ import {
   BannerMode,
   ViewTypeMap,
   ViewType
-} from 'layout/LayoutTemplate/types'
+} from 'config/types'
 import { FormGroup, Select } from 'components/editor/Form'
 import { MyContext } from 'storage'
 import Upload from 'components/editor/Upload'

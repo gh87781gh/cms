@@ -13,7 +13,7 @@ import {
 } from 'components/editor/Form'
 import ColorPicker from 'components/editor/ColorPicker'
 import Switch from 'components/Switch'
-import { LayoutModule, LayoutSettingType } from 'layout/LayoutTemplate/types'
+import { LayoutModule, LayoutSettingType } from 'config/types'
 
 export default function EditorLayout() {
   const { layoutSetting, setLayoutSetting } = useContext(MyContext) as {

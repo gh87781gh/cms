@@ -1,5 +1,5 @@
 import React from 'react'
-import { LayoutSettingType } from 'layout/LayoutTemplate/types'
+import { LayoutSettingType } from 'config/types'
 type IContext = {
   layoutSetting: LayoutSettingType | null
   setLayoutSetting: (layoutSetting: LayoutSettingType) => void

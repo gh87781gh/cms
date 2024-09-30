@@ -10,7 +10,7 @@ import Header from 'layout/Header'
 import Sidebar from 'layout/Sidebar'
 import { ConfigProvider } from 'antd'
 import { MyContext } from 'storage'
-import { LayoutSettingType, LayoutModule } from './types'
+import { LayoutSettingType, LayoutModule } from 'config/types'
 import cx from 'utils/cx'
 import { config, SetCSSVars } from 'config'
 

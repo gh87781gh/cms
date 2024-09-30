@@ -13,7 +13,7 @@ import {
   LayoutSettingType,
   ViewTypeMap,
   ViewType
-} from 'layout/LayoutTemplate/types'
+} from 'config/types'
 import { Container } from 'components/editor/Dnd'
 import EditorHomeView from './EditorHomeView'
 

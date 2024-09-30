@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import './index.scss'
 import Image from 'next/image'
 
-import { BannerViewType } from 'layout/LayoutTemplate/types'
+import { BannerViewType } from 'config/types'
 import { MyContext } from 'storage'
 
 type PropsType = {
@@ -11,7 +11,7 @@ type PropsType = {
 
 export default function Banner(props: PropsType) {
   const { layoutSetting } = useContext(MyContext)
-  const borderRadiusLG = layoutSetting?.borderRadiusLG
+  const borderRadiusLG = layoutSetting?.cssVars?.borderRadiusLG
 
   return (
     <div
