@@ -1,5 +1,3 @@
-$header-bg-dark: $color-gray-7;
-$header-bg-light: $color-gray-2;
 $header-color-dark: $color-text-dark;
 $header-color-light: $color-text-light;
 $header-shadow-dark: 0 0 10px 0 $color-gray-10;
@@ -10,12 +8,12 @@ $header-padding-x: $gap-base;
 
 .header {
   &.dark {
-    background-color: $header-bg-dark;
+    background-color: var(--npc-layoutHeaderBgcDark);
     color: $header-color-dark;
     box-shadow: $header-shadow-dark;
   }
   &.light {
-    background-color: $header-bg-light;
+    background-color: var(--npc-layoutHeaderBgcLight);
     color: $header-color-light;
     box-shadow: $header-shadow-light;
   }
@@ -30,11 +28,11 @@ $header-padding-x: $gap-base;
 }
 .header-logo {
   &.dark {
-    background-color: $header-bg-dark;
+    background-color: var(--npc-layoutHeaderBgcDark);
     color: $header-color-dark;
   }
   &.light {
-    background-color: $header-bg-light;
+    background-color: var(--npc-layoutHeaderBgcLight);
     color: $header-color-light;
   }
 }

@@ -5,11 +5,11 @@ $article-color-light: $color-text-light;
 
 .article {
   &.dark {
-    background-color: $article-bg-dark;
+    background-color: var(--npc-layoutArticleBgcDark);
     color: $article-color-dark;
   }
   &.light {
-    background-color: $article-bg-light;
+    background-color: var(--npc-layoutArticleBgcLight);
     color: $article-color-light;
   }
   height: 100%;

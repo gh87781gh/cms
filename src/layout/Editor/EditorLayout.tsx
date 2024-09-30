@@ -30,6 +30,38 @@ export default function EditorLayout() {
     }))
   }
 
+  const renderThemeColorPickers = () => {
+    return (
+      <>
+        <label>Colors</label>
+        <FormGroupContent>
+          <ColorPicker
+            style={{ position: 'relative', bottom: '-7px' }}
+            value={cssVars.primaryColor}
+            format='hex'
+            disabledAlpha={true}
+            onChange={(value) => {
+              const colors = generate(value.toHexString())
+              onChange('primaryColor', colors[5])
+            }}
+          />{' '}
+          Primary color
+        </FormGroupContent>
+        <FormGroupContent>
+          <ColorPicker
+            style={{ position: 'relative', bottom: '-7px' }}
+            value={cssVars.btnTextColor}
+            format='hex'
+            disabledAlpha={true}
+            onChange={(value) => {
+              onChange('btnTextColor', value.toHexString())
+            }}
+          />{' '}
+          Primary Button text color
+        </FormGroupContent>
+      </>
+    )
+  }
   return (
     <>
       <FormGroup>
@@ -77,34 +109,88 @@ export default function EditorLayout() {
           </Checkbox>
         </FormGroupContent>
       </FormGroup>
-      <FormGroup>
-        <label>Colors</label>
-        <FormGroupContent>
-          <ColorPicker
-            style={{ position: 'relative', bottom: '-7px' }}
-            value={cssVars.primaryColor}
-            format='hex'
-            disabledAlpha={true}
-            onChange={(value) => {
-              const colors = generate(value.toHexString())
-              onChange('primaryColor', colors[5])
-            }}
-          />{' '}
-          Primary color
-        </FormGroupContent>
-        <FormGroupContent>
-          <ColorPicker
-            style={{ position: 'relative', bottom: '-7px' }}
-            value={cssVars.btnTextColor}
-            format='hex'
-            disabledAlpha={true}
-            onChange={(value) => {
-              onChange('btnTextColor', value.toHexString())
-            }}
-          />{' '}
-          Primary Button text color
-        </FormGroupContent>
-      </FormGroup>
+      {layoutSetting?.theme === 'dark' ? (
+        <FormGroup>
+          {renderThemeColorPickers()}
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutHeaderBgcDark}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutHeaderBgcDark', value.toHexString())
+              }}
+            />{' '}
+            Header background color
+          </FormGroupContent>
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutSidebarBgcDark}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutSidebarBgcDark', value.toHexString())
+              }}
+            />{' '}
+            Sidebar background color
+          </FormGroupContent>
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutArticleBgcDark}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutArticleBgcDark', value.toHexString())
+              }}
+            />{' '}
+            Article background color
+          </FormGroupContent>
+        </FormGroup>
+      ) : (
+        <FormGroup>
+          {renderThemeColorPickers()}
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutHeaderBgcLight}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutHeaderBgcLight', value.toHexString())
+              }}
+            />{' '}
+            Header background color
+          </FormGroupContent>
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutSidebarBgcLight}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutSidebarBgcLight', value.toHexString())
+              }}
+            />{' '}
+            Sidebar background color
+          </FormGroupContent>
+          <FormGroupContent>
+            <ColorPicker
+              style={{ position: 'relative', bottom: '-7px' }}
+              value={cssVars.layoutArticleBgcLight}
+              format='hex'
+              disabledAlpha={true}
+              onChange={(value) => {
+                onChange('layoutArticleBgcLight', value.toHexString())
+              }}
+            />{' '}
+            Article background color
+          </FormGroupContent>
+        </FormGroup>
+      )}
+
       <FormGroup>
         <label>Border radius</label>
         <FormGroupContent>

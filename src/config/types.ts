@@ -17,6 +17,12 @@ export type CSSVarsType = {
   borderRadius: string //Border radius of base components
   borderRadiusSM: string //Border radius of small size components like Button, Input, Select
   borderRadiusLG: string //Border radius of large size components like Card, Modal, Drawer
+  layoutHeaderBgcDark: string
+  layoutHeaderBgcLight: string
+  layoutSidebarBgcDark: string
+  layoutSidebarBgcLight: string
+  layoutArticleBgcDark: string
+  layoutArticleBgcLight: string
 }
 
 export type GamesViewType = {

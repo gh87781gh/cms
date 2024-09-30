@@ -11,6 +11,12 @@ export const config: LayoutSettingType = {
     borderRadius: '10px',
     borderRadiusSM: '6px',
     borderRadiusLG: '12px',
+    layoutHeaderBgcDark: '#434343',
+    layoutHeaderBgcLight: '#f0f0f0',
+    layoutSidebarBgcDark: '#595959',
+    layoutSidebarBgcLight: '#fafafa',
+    layoutArticleBgcDark: '#000',
+    layoutArticleBgcLight: '#000',
   },
   homepageViews: [
     {
