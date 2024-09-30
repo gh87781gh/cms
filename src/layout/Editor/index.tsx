@@ -10,7 +10,7 @@ import { match } from 'ts-pattern'
 import { LayoutSettingType } from 'layout/LayoutTemplate/types'
 import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
 import Modal from 'components/editor/Modal'
-import config from 'config'
+import { config } from 'config'
 import EditorLayout from './EditorLayout'
 import EditorHome from './EditorHome'
 

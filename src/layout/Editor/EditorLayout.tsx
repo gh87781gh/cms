@@ -20,19 +20,13 @@ export default function EditorLayout() {
     layoutSetting: LayoutSettingType
     setLayoutSetting: React.Dispatch<React.SetStateAction<LayoutSettingType>>
   }
+  const { cssVars } = layoutSetting
 
-  const onChange = (key: string, value: number) => {
+  const onChange = (key: string, value: number | string) => {
+    const newCssVars = { ...cssVars, [key]: value }
     setLayoutSetting((prev) => ({
       ...prev,
-      [key]: value
-    }))
-  }
-
-  const generateColor = (key: string, color: string) => {
-    const colors = generate(color)
-    setLayoutSetting((prev) => ({
-      ...prev,
-      [key]: colors[5]
+      cssVars: newCssVars
     }))
   }
 
@@ -88,11 +82,12 @@ export default function EditorLayout() {
         <FormGroupContent>
           <ColorPicker
             style={{ position: 'relative', bottom: '-7px' }}
-            value={layoutSetting?.primaryColor}
+            value={cssVars.primaryColor}
             format='hex'
             disabledAlpha={true}
             onChange={(value) => {
-              generateColor('primaryColor', value.toHexString())
+              const colors = generate(value.toHexString())
+              onChange('primaryColor', colors[5])
             }}
           />{' '}
           Primary color
@@ -100,11 +95,11 @@ export default function EditorLayout() {
         <FormGroupContent>
           <ColorPicker
             style={{ position: 'relative', bottom: '-7px' }}
-            value={layoutSetting?.btnTextColor}
+            value={cssVars.btnTextColor}
             format='hex'
             disabledAlpha={true}
             onChange={(value) => {
-              generateColor('btnTextColor', value.toHexString())
+              onChange('btnTextColor', value.toHexString())
             }}
           />{' '}
           Primary Button text color
@@ -116,7 +111,7 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={layoutSetting?.borderRadiusSM}
+            value={cssVars.borderRadiusSM}
             onChange={(value: any) => onChange('borderRadiusSM', value)}
           />{' '}
           small size components like Button, Input, Select
@@ -125,7 +120,7 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={layoutSetting?.borderRadius}
+            value={cssVars.borderRadius}
             onChange={(value: any) => onChange('borderRadius', value)}
           />{' '}
           base components
@@ -134,7 +129,7 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={layoutSetting?.borderRadiusLG}
+            value={cssVars.borderRadiusLG}
             onChange={(value: any) => onChange('borderRadiusLG', value)}
           />{' '}
           some large border components like Banner, Card, Modal

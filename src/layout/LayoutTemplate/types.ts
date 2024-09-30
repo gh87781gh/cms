@@ -11,6 +11,14 @@ export enum GamesMode {
   b = '1'
 }
 
+export type CSSVarsType = {
+  primaryColor: string
+  btnTextColor: string
+  borderRadius: number //Border radius of base components
+  borderRadiusSM: number //Border radius of small size components like Button, Input, Select
+  borderRadiusLG: number //Border radius of large size components like Card, Modal, Drawer
+}
+
 export type GamesViewType = {
   viewType: 'games'
   id: number
@@ -35,11 +43,7 @@ export type LayoutSettingType = {
   layout: LayoutModule
   theme: 'dark' | 'light'
   isShowThemeSwitch: boolean
-  primaryColor: string
-  btnTextColor: string
-  borderRadius: number
-  borderRadiusSM: number
-  borderRadiusLG: number
-  homepageViews: ViewTypeMap[ViewType][],
+  cssVars: CSSVarsType
+  homepageViews: ViewTypeMap[ViewType][]
 }
 

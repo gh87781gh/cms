@@ -2,7 +2,7 @@
 
 import 'react-perfect-scrollbar/dist/css/styles.css'
 import './index.scss'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { match } from 'ts-pattern'
 
@@ -12,7 +12,7 @@ import { ConfigProvider } from 'antd'
 import { MyContext } from 'storage'
 import { LayoutSettingType, LayoutModule } from './types'
 import cx from 'utils/cx'
-import config from 'config'
+import { config, SetCSSVars } from 'config'
 
 import Editor from 'layout/Editor'
 
@@ -28,25 +28,27 @@ export default function LayoutTemplate({
   const [layoutSetting, setLayoutSetting] = useState<LayoutSettingType>({
     ...settings
   })
+  const cssVars = useMemo(() => layoutSetting.cssVars, [layoutSetting])
 
   return (
     <MyContext.Provider value={{ layoutSetting, setLayoutSetting }}>
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: layoutSetting.primaryColor,
-            colorPrimaryBg: layoutSetting.primaryColor,
-            borderRadius: layoutSetting.borderRadius,
-            borderRadiusSM: layoutSetting.borderRadiusSM,
-            borderRadiusLG: layoutSetting.borderRadiusLG
+            colorPrimary: cssVars.primaryColor,
+            colorPrimaryBg: cssVars.primaryColor,
+            borderRadius: cssVars.borderRadius,
+            borderRadiusSM: cssVars.borderRadius * 0.5,
+            borderRadiusLG: cssVars.borderRadius * 2
           },
           components: {
             Button: {
-              primaryColor: layoutSetting.btnTextColor
+              primaryColor: cssVars.btnTextColor
             }
           }
         }}
       >
+        <SetCSSVars config={layoutSetting} />
         {isAdmin && <Editor />}
         <main className={cx(isAdmin ? 'main-editor' : 'main')}>
           {match(layoutSetting.layout)
