@@ -1,16 +1,10 @@
-import { useContext } from 'react'
 import './index.scss'
-
-import { MyContext } from 'storage'
 
 type PropsType = {
   data: any[] | null
 }
 
 export default function Games(props: PropsType) {
-  const { layoutSetting } = useContext(MyContext)
-  const borderRadiusLG = layoutSetting?.cssVars.borderRadiusLG
-
   return (
     <ul className='games games-a'>
       {!Array.isArray(props.data)
