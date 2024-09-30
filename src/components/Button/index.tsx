@@ -2,8 +2,6 @@ import { useContext } from 'react'
 import { Button, ButtonProps } from 'antd'
 import './index.scss'
 
-import { MyContext } from 'storage'
-
 export function BtnGroup({
   children
 }: Readonly<{
@@ -15,19 +13,8 @@ export function BtnGroup({
 export const BtnPrimary = (props: ButtonProps) => (
   <Button type='primary' {...props} />
 )
-export const BtnOutline = ({
-  active,
-  ...props
-}: ButtonProps & { active?: boolean }) => {
-  const { layoutSetting } = useContext(MyContext)
-  const primaryColor = layoutSetting?.primaryColor
-  const btnTextColor = layoutSetting?.btnTextColor
-
-  const styleObj = active
-    ? { backgroundColor: primaryColor, color: btnTextColor }
-    : {}
-
-  return <Button {...props} style={styleObj} />
+export const BtnOutline = (props: ButtonProps) => {
+  return <Button {...props} />
 }
 // export const BtnDashed = () => <Button type='dashed' />
 // export const BtnText = () => <Button type='text' />

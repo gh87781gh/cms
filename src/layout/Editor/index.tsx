@@ -9,14 +9,15 @@ import { MyContext } from 'storage'
 import { match } from 'ts-pattern'
 import { LayoutSettingType } from 'layout/LayoutTemplate/types'
 import { BtnGroup, BtnPrimary, BtnOutline } from 'components/Button'
+import { Select } from 'components/editor/Form'
 import Modal from 'components/editor/Modal'
 import { config } from 'config'
 import EditorLayout from './EditorLayout'
 import EditorHome from './EditorHome'
 
 enum LevelEnum {
-  Layout,
-  Home
+  LayoutSetting = 'LayoutSetting',
+  HomePage = 'HomePage'
 }
 
 export default function Editor() {
@@ -46,35 +47,18 @@ export default function Editor() {
       <PerfectScrollbar>
         <div className='editor-content'>
           <h1>Editor mode</h1>
-          <BtnGroup>
-            <BtnOutline
-              size='large'
-              active={level === LevelEnum.Layout}
-              onClick={() => setLevel(LevelEnum.Layout)}
-            >
-              Layout Setting
-            </BtnOutline>
-            <BtnOutline
-              size='large'
-              active={level === LevelEnum.Home}
-              onClick={() => setLevel(LevelEnum.Home)}
-            >
-              Home page
-            </BtnOutline>
-          </BtnGroup>
+          <Select
+            value={level}
+            onChange={(value) => setLevel(value)}
+            options={Object.keys(LevelEnum).map((key) => ({
+              label: key,
+              value: LevelEnum[key as keyof typeof LevelEnum]
+            }))}
+          />
+          <h2>{LevelEnum[level]}</h2>
           {match(level)
-            .with(LevelEnum.Layout, () => (
-              <>
-                <h2>Layout Setting</h2>
-                <EditorLayout />
-              </>
-            ))
-            .with(LevelEnum.Home, () => (
-              <>
-                <h2>Home Page</h2>
-                <EditorHome />
-              </>
-            ))
+            .with(LevelEnum.LayoutSetting, () => <EditorLayout />)
+            .with(LevelEnum.HomePage, () => <EditorHome />)
             .otherwise(() => null)}
         </div>
         <div className='editor-footer'>
