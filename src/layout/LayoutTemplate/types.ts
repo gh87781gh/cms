@@ -14,9 +14,9 @@ export enum GamesMode {
 export type CSSVarsType = {
   primaryColor: string
   btnTextColor: string
-  borderRadius: number //Border radius of base components
-  borderRadiusSM: number //Border radius of small size components like Button, Input, Select
-  borderRadiusLG: number //Border radius of large size components like Card, Modal, Drawer
+  borderRadius: string //Border radius of base components
+  borderRadiusSM: string //Border radius of small size components like Button, Input, Select
+  borderRadiusLG: string //Border radius of large size components like Card, Modal, Drawer
 }
 
 export type GamesViewType = {

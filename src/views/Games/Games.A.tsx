@@ -9,19 +9,15 @@ type PropsType = {
 
 export default function Games(props: PropsType) {
   const { layoutSetting } = useContext(MyContext)
-  const borderRadiusLG = layoutSetting?.borderRadiusLG
+  const borderRadiusLG = layoutSetting?.cssVars.borderRadiusLG
 
   return (
-    <ul className='games'>
+    <ul className='games games-a'>
       {!Array.isArray(props.data)
         ? Array(8)
             .fill(null)
             .map((item: any, index: number) => (
-              <li
-                key={index}
-                className='games-empty-card'
-                style={{ borderRadius: borderRadiusLG }}
-              />
+              <li key={index} className='games-empty-card' />
             ))
         : props.data?.map((item: any) => (
             <li key={item.id}>

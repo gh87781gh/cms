@@ -38,6 +38,12 @@ $sidebar-padding-x: $gap-base;
     }
   }
   a {
+    display: block;
+    padding: $gap-base;
+    border-radius: var(--npc-borderRadius);
+    text-decoration: none;
+    transition: $transition-base;
+
     &.dark {
       background-color: $sidebar-menu-bg-dark;
       color: $sidebar-menu-color-dark;
@@ -52,11 +58,6 @@ $sidebar-padding-x: $gap-base;
         background-color: $sidebar-menu-bg-light-hover;
       }
     }
-    display: block;
-    padding: $gap-base;
-    border-radius: $border-radius-base;
-    text-decoration: none;
-    transition: $transition-base;
   }
 }
 .sidebar-footer {

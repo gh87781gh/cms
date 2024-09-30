@@ -8,6 +8,8 @@ $banner-bgc: $color-gray-6;
   height: 500px;
   flex-wrap: nowrap;
   gap: 8px;
+  border-radius: var(--npc-borderRadiusLG);
+  overflow: hidden;
 
   .banner-a-left {
     width: 50%;
@@ -37,6 +39,8 @@ $banner-bgc: $color-gray-6;
   height: 500px;
   flex-wrap: nowrap;
   gap: 8px;
+  border-radius: var(--npc-borderRadiusLG);
+  overflow: hidden;
 
   .banner-b-left {
     width: 50%;

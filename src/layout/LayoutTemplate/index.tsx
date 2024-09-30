@@ -37,9 +37,9 @@ export default function LayoutTemplate({
           token: {
             colorPrimary: cssVars.primaryColor,
             colorPrimaryBg: cssVars.primaryColor,
-            borderRadius: cssVars.borderRadius,
-            borderRadiusSM: cssVars.borderRadius * 0.5,
-            borderRadiusLG: cssVars.borderRadius * 2
+            borderRadius: Number(cssVars.borderRadius.replace('px', '')),
+            borderRadiusSM: Number(cssVars.borderRadiusSM.replace('px', '')),
+            borderRadiusLG: Number(cssVars.borderRadiusLG.replace('px', ''))
           },
           components: {
             Button: {

@@ -16,6 +16,6 @@ export default function Games(props: PropsType) {
 
   return match(props.view.mode)
     .with(GamesMode.a, () => <GamesA data={isLoading ? null : data} />)
-    .with(GamesMode.b, () => <GamesB />)
+    .with(GamesMode.b, () => <GamesB data={isLoading ? null : data} />)
     .otherwise(() => null)
 }

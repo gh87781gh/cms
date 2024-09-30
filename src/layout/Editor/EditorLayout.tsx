@@ -111,8 +111,8 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={cssVars.borderRadiusSM}
-            onChange={(value: any) => onChange('borderRadiusSM', value)}
+            value={Number(cssVars.borderRadiusSM.replace('px', ''))}
+            onChange={(value: any) => onChange('borderRadiusSM', `${value}px`)}
           />{' '}
           small size components like Button, Input, Select
         </FormGroupContent>
@@ -120,8 +120,8 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={cssVars.borderRadius}
-            onChange={(value: any) => onChange('borderRadius', value)}
+            value={Number(cssVars.borderRadius.replace('px', ''))}
+            onChange={(value: any) => onChange('borderRadius', `${value}px`)}
           />{' '}
           base components
         </FormGroupContent>
@@ -129,8 +129,8 @@ export default function EditorLayout() {
           <InputNumber
             min={0}
             precision={0}
-            value={cssVars.borderRadiusLG}
-            onChange={(value: any) => onChange('borderRadiusLG', value)}
+            value={Number(cssVars.borderRadiusLG.replace('px', ''))}
+            onChange={(value: any) => onChange('borderRadiusLG', `${value}px`)}
           />{' '}
           some large border components like Banner, Card, Modal
         </FormGroupContent>

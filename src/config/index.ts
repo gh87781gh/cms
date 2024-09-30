@@ -8,9 +8,9 @@ export const config: LayoutSettingType = {
   cssVars: {
     primaryColor: '#ffa947',
     btnTextColor: '#fff',
-    borderRadius: 10,
-    borderRadiusSM: 6,
-    borderRadiusLG: 12,
+    borderRadius: '10px',
+    borderRadiusSM: '6px',
+    borderRadiusLG: '12px',
   },
   homepageViews: [
     {
@@ -43,8 +43,8 @@ export const SetCSSVars = ({ config }: { config: LayoutSettingType }) => {
 
     const setRootVar = (key: string, value: string | number) => {
       if (!value) return
-      const r = document.querySelector(':root') as HTMLElement;
-      r?.style.setProperty(key, value.toString());
+      // const r = document.querySelector(':root') as HTMLElement;
+      document.documentElement.style.setProperty(key, value.toString());
     }
 
     const { cssVars } = config

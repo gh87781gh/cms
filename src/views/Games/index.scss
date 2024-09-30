@@ -10,4 +10,16 @@ $game-card-bgc: $color-gray-6;
   width: 11%;
   height: 150px;
   background-color: $game-card-bgc;
+  border-radius: var(--npc-borderRadiusLG);
+}
+
+.games-a {
+  .games-empty-card {
+    width: 11%;
+  }
+}
+.games-b {
+  .games-empty-card {
+    width: 31%;
+  }
 }
